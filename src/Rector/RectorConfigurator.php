@@ -52,6 +52,7 @@ class RectorConfigurator
             CatchExceptionNameMatchingTypeRector::class,
             EncapsedStringsToSprintfRector::class,
             WrapEncapsedVariableInCurlyBracesRector::class,
+            SymplifyQuoteEscapeRector::class,
             // Note: RemoveAlwaysElseRector not understood when parameter has different interfaces
             RemoveAlwaysElseRector::class,
             FlipTypeControlToUseExclusiveTypeRector::class,
