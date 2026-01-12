@@ -29,6 +29,7 @@ use Rector\Set\ValueObject\SetList;
 use Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector;
 use Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector;
 use Rector\TypeDeclaration\Rector\Closure\AddClosureVoidReturnTypeWhereNoReturnRector;
+use Rector\TypeDeclaration\Rector\StmtsAwareInterface\NarrowWideUnionReturnTypeRector;
 use Rector\TypeDeclaration\Rector\While_\WhileNullableToInstanceofRector;
 
 class RectorConfigurator
@@ -48,7 +49,6 @@ class RectorConfigurator
         $rectorConfig->skip([
             RestoreDefaultNullToNullableTypePropertyRector::class,
             FlipTypeControlToUseExclusiveTypeRector::class,
-            SymplifyQuoteEscapeRector::class,
             CatchExceptionNameMatchingTypeRector::class,
             EncapsedStringsToSprintfRector::class,
             WrapEncapsedVariableInCurlyBracesRector::class,
@@ -63,6 +63,8 @@ class RectorConfigurator
             ChangeOrIfContinueToMultiContinueRector::class,
             AddArrowFunctionReturnTypeRector::class,
             JoinStringConcatRector::class,
+            // Warning: Can break LSP - narrows return type even when interface requires wider type
+            NarrowWideUnionReturnTypeRector::class,
             // Warning: A rule can break the code if it does "not understand" the context and reasons.
             RemoveAlwaysTrueIfConditionRector::class,
             // Warning: Can't work with the Traits
