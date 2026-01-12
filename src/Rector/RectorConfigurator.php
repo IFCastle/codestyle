@@ -11,6 +11,7 @@ use Rector\CodeQuality\Rector\Switch_\SwitchTrueToIfRector;
 use Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\CodingStyle\Rector\Encapsed\WrapEncapsedVariableInCurlyBracesRector;
+use Rector\CodingStyle\Rector\String_\SimplifyQuoteEscapeRector;
 use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
 use Rector\Config\RectorConfig;
 use Rector\DeadCode\Rector\Assign\RemoveUnusedVariableAssignRector;
@@ -52,6 +53,7 @@ class RectorConfigurator
             CatchExceptionNameMatchingTypeRector::class,
             EncapsedStringsToSprintfRector::class,
             WrapEncapsedVariableInCurlyBracesRector::class,
+            SimplifyQuoteEscapeRector::class,
             SymplifyQuoteEscapeRector::class,
             // Note: RemoveAlwaysElseRector not understood when parameter has different interfaces
             RemoveAlwaysElseRector::class,
