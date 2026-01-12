@@ -37,7 +37,7 @@ class RectorConfigurator
     public static function configureSets(RectorConfig $rectorConfig): void
     {
         $rectorConfig->sets([
-            LevelSetList::UP_TO_PHP_83,
+            LevelSetList::UP_TO_PHP_85,
             SetList::CODING_STYLE,
             SetList::CODE_QUALITY,
             SetList::TYPE_DECLARATION,
